@@ -8,8 +8,9 @@ class RecordForm(forms.Form):
     borrower = forms.ModelChoiceField(queryset=Borrower.objects.all(), label="Select Borrower", required=True)
     colender = forms.ModelChoiceField(queryset=CoLender.objects.all(), label="Select Co-Lender", required=False)
     guarantor = forms.ModelChoiceField(queryset=Gurrantor.objects.all(), label="Select Gurrantor", required=False)
-    document_template = forms.ModelChoiceField(
+    document_template = forms.ModelMultipleChoiceField(
         queryset=DocumentTemplate.objects.all(),
         label="Select Document Template",
-        required=True
-    )
+        required=True,
+        widget=forms.CheckboxSelectMultiple,
+        )

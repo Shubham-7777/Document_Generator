@@ -11,7 +11,7 @@ venv_docsgen/
 
 # Django stuff
 *.log
-db.sqlite3
+
 *.pyc
 *.pyo
 *.pyd
