@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Main Menu{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-5 text-primary">Main Menu</h1>
+        <p class="text-muted">Choose an option below to proceed</p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <ul class="list-group shadow-sm">
+                <li class="list-group-item list-group-item-action">
+                    <a class="text-decoration-none text-dark d-flex justify-content-between align-items-center" href="/generate/document">
+                        Generate Document
+                        <span class="badge bg-primary text-white rounded-pill">New</span>
+                    </a>
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <a class="text-decoration-none text-dark d-flex justify-content-between align-items-center" href="/form">
+                        Add Data
+                        <span class="badge bg-primary text-white rounded-pill">New</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

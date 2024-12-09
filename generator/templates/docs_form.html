@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Generate Document{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="border rounded p-4 bg-light shadow-sm">
+        <h2 class="text-center text-primary mb-4">Generate Document</h2>
+        <form method="post" class="row g-3">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="col-md-6">
+                <label for="{{ field.id_for_label }}" class="form-label fw-bold">{{ field.label }}</label>
+                {% if field.field.widget.input_type == "select" %}
+                {{ field }}
+                {% else %}
+                {{ field }}
+                {% endif %}
+                {% if field.errors %}
+                <div class="text-danger small mt-1">
+                    {{ field.errors|join:" " }}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <!-- Submit button -->
+            <div class="col-12 text-center mt-3">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    Generate Document
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

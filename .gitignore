@@ -1,0 +1,107 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+venv_docsgen/
+
+# Django stuff
+*.log
+db.sqlite3
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3-journal
+*.pot
+
+# Local settings
+local_settings.py
+
+# Media
+/media/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+*.webp
+
+# Static files
+/static/
+
+# Cache
+*.py[co]
+*.swp
+*.swo
+*~
+
+# VS Code specific files
+.vscode/
+
+# PyCharm specific files
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Test coverage and reports
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.tox/
+.nox/
+.cache/
+
+# Celery beat schedule file
+celerybeat-schedule
+
+# Migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
+*/migrations/[!__init__]*.py
+
+# Environment variables
+.env
+.env.*
+
+# Secrets and sensitive data
+secrets.json
+config.json
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.eggs
+*.wheel
+
+# Compiled files
+*.compiled
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Logs
+*.log
+*.out
+*.err
+
+# Other unnecessary files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+venv*
+venv/

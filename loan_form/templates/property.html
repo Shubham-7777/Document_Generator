@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Property{% endblock %}
+
+{% block content %}
+<div class="container mt-5 border rounded p-5 bg-light">
+    <h1 class="text-center text-primary">Property</h1>
+
+    <form action="/form/add-property" method="post">
+        <label for="exampleFormControlInput1" class="form-label">Loan Number</label>
+        <input type="text" class="form-control" name="loan_number" required>
+
+        <label for="exampleFormControlInput1" class="form-label">Street Address</label>
+        <input type="text" class="form-control" name="street_address" required >
+
+        <label for="exampleFormControlInput1" class="form-label">City</label>
+        <input type="text" class="form-control" name="city" required >
+
+        <label for="exampleFormControlInput1" class="form-label">State</label>
+        <input type="text" class="form-control" name="state"required  >
+
+        <label for="exampleFormControlInput1" class="form-label">Zip</label>
+        <input type="number" class="form-control" name="zip" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Interest Rate</label>
+        <input type="number" class="form-control" name="interest_rate" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Loan Amount</label>
+        <input type="number" class="form-control" name="loan_amount" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Rehab Withhold</label>
+        <input type="number" class="form-control" name="rehab_withhold" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Funding Date</label>
+        <input type="date" class="form-control" name="funding_date" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Maturity Date</label>
+        <input type="date" class="form-control" name="maturity_date" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Monthly Payment</label>
+        <input type="number" class="form-control" name="monthly_payment" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Default Rate</label>
+        <input type="number" class="form-control" name="default_rate" required >
+
+        <input class="btn btn-primary mt-3" type="submit" value="Save">
+    </form>
+</div>
+{% endblock %}

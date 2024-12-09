@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Lender{% endblock %}
+
+{% block content %}
+<div class="container mt-5 border rounded p-5 bg-light">
+    <h1 class="text-center text-primary">Lender</h1>
+
+    <form action="/form/add-lender/" method="post">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Street Address 1</label>
+        <input type="text" class="form-control" name="street_address1" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Street Address 2</label>
+        <input type="text" class="form-control" name="street_address2" required >
+
+        <label for="exampleFormControlInput1" class="form-label">City</label>
+        <input type="text" class="form-control" name="city" required >
+
+        <label for="exampleFormControlInput1" class="form-label">State</label>
+        <input type="text" class="form-control" name="state" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Zip</label>
+        <input type="number" class="form-control" name="zip" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" required >
+
+        <label for="exampleFormControlInput1" class="form-label">Phone</label>
+        <input type="text" class="form-control" name="phone" required >
+
+        <input class="btn btn-primary mt-3" type="submit" value="Save">
+    </form>
+</div>
+{% endblock %}

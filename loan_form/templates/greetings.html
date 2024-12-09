@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 text-success">{{ name }} Saved Successfully</h1>
+        <p class="text-muted mb-4">Your record has been saved successfully. You can now go back to the form menu or continue with other tasks.</p>
+        <a href="/form" class="btn btn-outline-primary btn-lg">Go to Form Menu</a>
+    </div>
+</div>
+{% endblock %}
