@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container mt-5 border rounded p-5 bg-light">
     <h1 class="text-center text-primary">Property</h1>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <form action="/form/add-property" method="post">
         <label for="exampleFormControlInput1" class="form-label">Loan Number</label>
         <input type="text" class="form-control" name="loan_number" required>
@@ -28,6 +28,9 @@
         <label for="exampleFormControlInput1" class="form-label">Loan Amount</label>
         <input type="number" class="form-control" name="loan_amount" required >
 
+        <label for="text_representation" class="form-label">Text Loan Amount</label>
+        <input type="text" id="text_representation" class="form-control" name="text_representation" readonly>
+
         <label for="exampleFormControlInput1" class="form-label">Rehab Withhold</label>
         <input type="number" class="form-control" name="rehab_withhold" required >
 
@@ -45,5 +48,53 @@
 
         <input class="btn btn-primary mt-3" type="submit" value="Save">
     </form>
+
+<!--
+
+    <script>
+        $(document).ready(function () {
+            $("#loan_amount").on("input", function () {
+                const loanAmount = $(this).val();
+                if (loanAmount) {
+                    $.ajax({
+                        url: "/add-property/",
+                        type: "GET",
+                        data: { loan_amount: loanAmount },
+                        success: function (response) {
+                            $("#text_representation").val(response.text_representation);
+                        },
+                        error: function () {
+                            $("#text_representation").val("Error converting number");
+                        },
+                    });
+                } else {
+                    $("#text_representation").val("");
+                }
+            });
+        });
+    </script>
 </div>
 {% endblock %}
+
+
+$(document).ready(function () {
+    $("#loan_amount").on("input", function () {
+        const loanAmount = $(this).val();
+        if (loanAmount) {
+            $.ajax({
+                url: "add-property/",  // Update this URL to match your Django URL pattern
+                type: "GET",
+                data: { loan_amount: loanAmount },
+                success: function (response) {
+                    $("#text_representation").val(response.text_representation);
+                },
+                error: function () {
+                    $("#text_representation").val("Error converting number");
+                },
+            });
+        } else {
+            $("#text_representation").val("");
+        }
+    });
+});
+-->

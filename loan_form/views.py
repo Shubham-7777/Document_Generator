@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 from .models import Property, CoLender, Lender, Borrower, Gurrantor
+from num2words import num2words
+
 
 def borrower(request):
     template = loader.get_template('borrower.html')
@@ -107,13 +109,16 @@ def add_property(request):
         state = data.get('state')
         zip_code = data.get('zip')
         interest_rate = data.get('interest_rate')
-        loan_amount = data.get('loan_amount')
+        loan_amount = data.get('loan_amount', 0)
         rehab_withhold = data.get('rehab_withhold')
         funding_date = data.get('funding_date')   
         maturity_date = data.get('maturity_date') 
         monthly_payment = data.get('monthly_payment') 
         default_rate = data.get('default_rate')
 
+        text_representation = num2words(loan_amount)
+        #words = text_representation.split()
+        #words = words[0].lower() + ''.join(word.capitalize() for word in words[1:])
         try:
             property = Property.objects.create(
                 loan_number=loan_number,
@@ -123,6 +128,7 @@ def add_property(request):
                 zip=zip_code,
                 interest_rate=interest_rate,
                 loan_amount=loan_amount,
+                text_representation = text_representation,
                 rehab_withhold=rehab_withhold,
                 funding_date=funding_date,
                 maturity_date=maturity_date,

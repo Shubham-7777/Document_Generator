@@ -50,6 +50,7 @@ def process_form(request):
                     'zip': property_instance.zip,
                     'interest_rate': property_instance.interest_rate,
                     'loan_amount': property_instance.loan_amount,
+                    'text_representation': property_instance.text_representation,
                     'rehab_withhold': property_instance.rehab_withhold,
                     'funding_date': property_instance.funding_date,
                     'maturity_date': property_instance.maturity_date,

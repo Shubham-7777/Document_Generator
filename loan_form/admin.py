@@ -8,7 +8,7 @@ class BorrowerAdmin(admin.ModelAdmin):
     list_display = ('name','street_address1', 'city', 'state', 'zip', 'email', 'phone', 'signer', 'title')
 
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = ('loan_number','street_address', 'city', 'state', 'zip', 'interest_rate', 'loan_amount', 'rehab_withhold', 'funding_date',
+    list_display = ('loan_number','street_address', 'city', 'state', 'zip', 'interest_rate', 'loan_amount', 'text_representation', 'rehab_withhold', 'funding_date',
                     'maturity_date', 'monthly_payment', 'default_rate')
 
 class CoLenderAdmin(admin.ModelAdmin):

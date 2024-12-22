@@ -8,6 +8,7 @@ class Property(models.Model):
     zip = models.IntegerField()
     interest_rate = models.FloatField()
     loan_amount = models.FloatField()
+    text_representation = models.CharField(max_length=255)
     rehab_withhold = models.FloatField()
     funding_date = models.DateField()
     maturity_date = models.DateField()
